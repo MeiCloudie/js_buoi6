@@ -100,3 +100,38 @@ function taoNgoiSaoTamGiac(soDong) {
   return ketQua
 }
 document.getElementById("baiTap2").innerHTML = taoNgoiSaoTamGiac(100)
+
+// Yêu cầu bài tập bàn cờ vua: Thực hiện viết một chức năng (function) xử lí tạo ra layout một bàn cờ vua với 8 cột và 8 dòng.
+// Sau khi hoàn thành chức năng, xử lí dữ liệu động cho function để có thể tạo giao diện phù hợp với số cột và số dòng được cung cấp từ người dùng
+
+// Gợi ý
+// bắt đầu tạo ra một vòng lặp dùng để xử lý tạo ra các dòng
+// ở bàn cờ vua mỗi dòng tạo ra, nếu dòng đó là dòng lẻ thì sẽ bắt dầu bằng thẻ div có class là oTrang còn dòng chẵn thì bắt đầu bằng thẻ div có class là oDen
+let oTrang = "<div class='oTrang'></div>"
+let oDen = "<div class='oDen'></div>"
+// let dongLe = "";
+
+// xử lí tạo ra 8 dòng cho bàn cờ vua
+for (let z = 1; z <= 8; z++) {
+  // tạo ra cho nó các dòng dựa trên dòng lẻ hoặc dòng chẵn
+  let dongLe = ""
+  // tạo ra cột cho các dòng
+  for (let i = 1; i <= 8; i++) {
+    if (z % 2 == 1) {
+      if (i % 2 == 1) {
+        dongLe += oTrang
+      } else {
+        dongLe += oDen
+      }
+    } else {
+      if (i % 2 == 1) {
+        dongLe += oDen
+      } else {
+        dongLe += oTrang
+      }
+    }
+  }
+
+  // Thực hiện thêm html lên giao diện
+  document.getElementById("baiTapBanCoVua").innerHTML += `<div>${dongLe}</div>`
+}
