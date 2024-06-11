@@ -135,3 +135,8 @@ for (let z = 1; z <= 8; z++) {
   // Thực hiện thêm html lên giao diện
   document.getElementById("baiTapBanCoVua").innerHTML += `<div>${dongLe}</div>`
 }
+
+let arrString = ["h", "e", "l", "l", "o"]
+console.log(arrString.reverse())
+
+// for (let i = arrString.length - 1; i >= 0; i--)
